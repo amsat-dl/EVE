@@ -1,7 +1,7 @@
 # EVE
 the world first successfull Earth-Venus-Earth amateur radio communication by AMSAT-DL from the 20m Radio telescope at the Bochum Observatory (Sternwarte Bochum).
 
-We hope this material is useful for anyone who wants to repeat this. But "de minimis" they should try to replicate what we did and send "HI HI" to Venus and back.
+We hope this material is useful for anyone who wants to repeat this. But "de minimis" is, you should try to replicate what we did and send "HI HI" to Venus and back.
 
 ## Contents of this Archive
 EVE_2009  Folder containing details of Amsat-DL's 2009 EVE
