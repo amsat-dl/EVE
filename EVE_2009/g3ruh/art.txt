@@ -1,0 +1,63 @@
+            Venus Tracking and EVE Echo Frequency Control
+
+                     by James Miller G3RUH
+
+Introduction
+************
+To succeed with E-V-E requires that antenna pointing be exact.  This is because any error in antenna tracking makes an already extremely weak signal, weaker still.
+
+Likewise, receiver frequency control must also be exact, otherwise the echo signal, which is some 40 dB below audibility, will be almost impossible to locate or detect.
+
+This article describes the techniques used to attain the needed precision in the successful Amsat-DL 2009 March E-V-E experiment.
+
+Antenna Pointing
+****************
+The antenna 3 dB beamwidth at S-band is about 0.4°, so a pointing accuracy of order 0.04° is required.  The antenna machinery achieves more than 10x better, and the azimuth/elevation calculations more than 100x better.  The detail of tracking system and calculation methods are described in Amsat-DL Journal [1] [2] [3].
+
+The data used by us to compute the positions of solar system bodies is JPL Planetary and Lunar Ephemeris DE405/LE405.  This has formed the basis of professional astronomy for many years, and is particularly accurate for the Moon and inner planets due the the large amount of observational data from interplanetary satellites and radar ranging, that has contributed to its formulation.  The Bochum software provides results for azimuth, elevation, range and range-rate identical to that from the JPL on-line service. [4]
+
+Frequency Control
+*****************
+The echo signal is spread in frequency by the apparent rotation of Venus.  This is composed of the actual movement of Venus around its orbit relative to the Earth (about 0.6°/d) and the axial rotation of Venus (-1.5°/d).  Their vector sum results in an apparent equatorial speed of 1.1 m/s, equivalent to a total doppler spread of +/-17.5 Hz maximum.  The middle 1/3rd of this contains most of the energy, that is, about 10 Hz of bandwidth.  This defines the necessary detection bandwidth, so the requirement of frequency control is to be 10x better, say 1 Hz due to all sources.
+
+The first step to achieve this is to run all hardware oscillators from a common reference frequency source.  This eliminates frequency uncertainty, since everything is synchronous; if the transmit frequency changes, the receiver changes identically.  At Bochum a 10 MHz Rubidium standard is available, though any stable source could be used for this experiment, provided everything is tied to it.
+
+The second step is to make all doppler shift calculations 'exact'.  The computer dedicated to this uses the same astronomical algorithms as are used for the antenna pointing system.  It tunes the AOR-5000 receiver frequency via an RS-232 serial port.  The radio's resolution is 1 Hz, which corresponds to a range-rate of about 50 mm/s  The actual range-rate uncertainty is hard to estimate from the JPL ephemeris documentation, but it is certain to be less than 1 mm/s.
+
+The mean echo doppler shift is due to uplink and downlink motions.  The signal leaves a moving and rotating Earth and arrives at moving Venus.  It leaves the moving Venus and arrives at a moving and rotating Earth .  Each of these 6 motions contributes to the total doppler shift.  The geometry of this is illustrated in fig. 1
+
+For the E-V-E experiment, the transmit frequency is held constant, and it is the receiver that is tuned; we need the RX frequency 'now' due to a signal that was transmitted some 280s earlier.  So the actual calculation proceeds in reverse order to the previous paragraph, and requires knowledge of Earth at time Tnow, Venus at (Tnow-Tdown) and Earth again at (Tnow-Tdown-Tup).  The light times Tdown and Tup, though similar (~140s) must be calculated separately and iteratively.  Their sum is known as the round-trip-light time RTLT.  The range rates for uplink and downlink are added, divided by the signal wavelength (0.12m) to give the doppler shift, which is subtracted from the transmit frequency to give the expected receiver frequency.  This is then rounded to 1 Hz and delivered to the radio. A screenshot is shown in fig. 2
+
+The frequency control software can perform the calculations for both E-V-E and EME.  The Moon is a useful target, because the huge echo signal (~50 dB CNR in 100 Hz bandwidth) allows the entire TX and RX systems to be checked end-to-end.  Most importantly, the received signal can be placed by ear within the radio bandwidth exactly where it is wanted.
+
+Fortuitously, 2009 Mar 26 saw the New Moon. Venus was at its closest to Earth, so both aligned, and the Moon was always available when required to allow the echo frequency to be checked.
+
+Thus when the tests began we knew precisely where to look on the RX spectrum display for the E-V-E echo to emerge out of the noisefloor.  And so it did. First time; every time.
+
+______________________________________________________________________________
+
+References
+----------
+[1]  Amsat-DL Journal, Jg. 31, No. 3, Sep/Nov 2005 seite 18-21
+
+[2]  Amsat-DL Journal, Jg. 31, No. 4, Dec/Feb 2005 seite 15-18
+
+[3]  Web article:  http://www.amsat.org/amsat/articles/g3ruh/126.html
+
+[4]  JPL Horizons System:  http://ssd.jpl.nasa.gov/horizons.html
+
+
+Captions
+--------
+Fig 1.  E-V-E geometry.  The scale is exaggerated; at Venus' closest approach to Earth, the two paths are essentially parallel, and the two light times (tau and tau') for Range=42.1M km are almost the same, 140.4s  Times are computed iteratively, because transit time depends on Venus position, which depends on the transit time ... 2 or 3 iterations for each path is sufficient.
+
+Fig 2.  Screenshot of AOR-5000 receiver control software.  When "T" is pressed,
+a software sequence keys the transmitter for the period of RTLT (round-trip light time), then initiates recording(s) for the same length of time.  A timer is shown in red or green when this happens.
+
+______________________________________________________________________________
+
+
+JRM
+
+init     2009 Apr 22 [Wed] 0937 utc
+rev      2009 Apr 27 [Mon] 1655 utc
