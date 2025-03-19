@@ -1,0 +1,115 @@
+
+           EVE2025  Estimates of RX Noise Power Increase at 2.45 GHz
+           =========================================================
+
+                               by James Miller
+
+                                 2025 Mar 18
+
+                              Sternwarte Bochum
+
+
+Summary
+=======
+EXPECTED noise increase (Y factor) of objects at 2.45 GHz assuming antenna
+effective area 170 m^2 and Tsys  85 K:
+
+                          Dia         S     dT       Y
+  Object                   '         Jy     K        dB
+  --------------------------------------------------------
+  Cassiopeia-A 2025 Q1     4.5       986   60.7     2.34
+  Tau-A                    4         818   50       2.02
+  Virgo-A                  0.02      143   8.8      0.43
+  Venus 2025 Mar 22        0.99     6.97   0.429    0.022
+  --------------------------------------------------------
+
+Use of the Above
+================
+By MEASURING the actual Y factor, system performance can be estimated; the
+ratio of Effective Area to System Temperature is:
+
+                2760
+    A/T = (Y-1) ----            m^2/K
+                 S
+
+    where S = Point source flux density in Jansky (Jy)
+
+[Note: the factor 2760 is 2*k/10^-26]
+
+    G/T = A/T * 4pi/L^2         1/K
+
+______________________________________________________________________________
+
+
+Calculations for Table above
+============================
+
+Venus Noise
+-----------
+Venus will next be at its closest (42.0 Mkm) on 2025 Mar 22 [Sat]
+
+           sav
+  dT = Tv  ---           K    Detected temperature increase at antenna
+           saA
+
+where:
+
+  sav = pi (rv/Rv)^2     sr   Solid angle subtended by Venus
+
+  saA = L^2/A            sr   Solid angle subtended by antenna
+
+with:
+
+  rv  = radius of Venus             km       6052    km
+  Rv  = Distance to Venus           km       42.0 M  km
+  L   = wavelength                   m       0.1224  m    at 2.45 GHz
+  A   = Antenna effective area       m^2     170    m^2   20m dia at 54%
+  Tv  = Venus blackbody temperature  K       580          dark side of planet
+
+This gives sav/saA = 7.40E-4, and the RX temperature increase dT = 0.429.
+
+This increase against Tsys = 85K is  0.022 dB ...
+
+                                   2 k Tv
+Note:  Venus flux   Sv = B sav =  -------  sav     W/m^2/Hz
+                                    L^2
+
+Cassiopeia A, Vir-A
+-------------------
+In 2025, Cas-A flux density at 2.45 GHz is S = 986 Jy.  The noise increase in
+an antenna of effective area A is:
+
+        S A
+  dT = -----             K    Detected temperature increase at antenna
+        2 k
+
+This gives a RX temperature increase dT = 61 K.
+
+This increase against Tsys = 85 K is  Y = 1+61/85 -> 2.3 dB.
+
+Similar calculations for Tau-A, Vir-A.
+
+______________________________________________________________________________
+
+Antenna Beamwidth at 2.45 GHz
+-----------------------------
+The estimated beam characteristics at 2.45 GHz, assuming an area efficiency of
+54% are:
+
+Effective area       = 170 m^2
+Beam solid angle saA = 8.813e-5 sr.
+Gain  4pi/saA        = 51.5 dBi.
+
+              Beamwidth
+   dB           deg
+  ---------------------
+  1/4          0.12             Estimated
+   3           0.41         <<< Measured                    
+  10           0.71         <<< Measured       
+  1st null +/- 0.70             Estimated
+  ---------------------
+
+This data is based on beam measurements of 2009 Mar 26
+
+
+JRM 2025 Mar 18 [Tue] 1837 utc

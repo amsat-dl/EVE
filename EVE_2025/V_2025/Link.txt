@@ -1,0 +1,63 @@
+Initial notes for Closest approach 2025
+---------------------------------------
+The estimated 2245 MHz Carrier to noise ratio for a Venus echo (year 2025)
+using the program below is 3.85 dB-Hz.
+
+That is, 3.85 dB in a 1 Hz bandwidth.
+
+The Venus apparent equatorial speed is 1.072 m/s which smears the echo
+2*(+/-8.7) Hz. That is, the return will occupy a maximum bandwidth of
+order 35 Hz.  The extremes of this are from the rim of Venus, so negligible.
+Probably the middle third only will be apparent.
+
+2025 Mar 22 at max elevation, doppler change at 2.45 GHz is -0.2202 Hz/s,
+doubled for an echo, -0.4404 Hz/s.  We can tune this out at the RX whether
+we are active [can't do now; have no TX :( ] or passive listening.
+
+______________________________________________________________________________
+
+Result in 2009
+--------------
+When we did EVE in 2009 we were plagued by WiFi, Bluetooth and other noises
+and were forced to process the signal by hard limiting it.  So our expected
+value was reduced by -2.0 dB (2/PI).
+
+We expected 3.8 dB-Hz but achieved +0.65 dB (S+N)/N over a noisefloor of
+0.053 dB.  That is, S/N = 0.161:1, -7.9 dB. The bandwidth was 8 Hz, that
+normalises the result to 1.1 dB-Hz.
+
+That's 2.7 dB less than expected by the link budget, pretty close to 2/PI
+due to the hard limiting.
+
+These days we have some decent S-band filtering to reduce the WLAN stuff.
+
+We also tuned the A5000 RX (rounded to 1 Hz) to remove the doppler so the
+recorded signal had no doppler shift to be removed.  Worked perfectly.
+______________________________________________________________________________
+
+
+/ REM Venus-Bounce Calculator
+/ ---------------------------
+
+Pt  = 5000                /  W       Power transmitted
+L   = 0.1224              /  m       Wavelength 2.45 GHz
+A   = 170                 /  m^2     effective area of RX antenna 55%
+Gt  = 4*PI*A/L/L          /  -       TX antenna gain
+Dv  = 41.97E9             /  m       distance to Venus 2025 Mar 22
+Rv  = 6052*1000           /  m       radius of Venus
+ref = 0.10                /  --      reflectivity of Venus (may be up to 0.14)
+k   = 1.38E-23            /  W/Hz/K  Boltzmann constant
+T   = 85                  /  K       RX noise temperature
+                          /
+p   = Pt*Gt/(4*PI*Dv*Dv)  /  W/m^2   Power density at Venus
+Pv  = p*PI*Rv*Rv          /  W       Power intercepted by Venus
+pe  = ref*Pv/(4*PI*Dv*Dv) /  W/m^2   Power density received back at Earth
+Pr  = pe*A                /  W       Power received in RX antenna (as TX ant.)
+Pn  = k*T                 /  W/Hz    Noise power density in RX
+CNR = Pr/Pn               /  Hz      CNR in 1 Hz bandwidth at RX
+
+PRINT 10*LOG CNR;" dB in 1 Hz bandwidth"
+
+
+RUN
+  3.85 dB in 1 Hz bandwidth
