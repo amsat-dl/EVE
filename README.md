@@ -1,5 +1,5 @@
 # EVE
-the world first successfull Earth-Venus-Earth amateur radio communication.
+the world first successfull Earth-Venus-Earth amateur radio communication by AMSAT-DL from the 20m Radio telescope at the Bochum Observatory (Sternwarte Bochum)
 
 Contents of this Archive
 ------------------------
