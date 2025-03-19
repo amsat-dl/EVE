@@ -1,0 +1,96 @@
+Date: Fri, 03 Apr 2009 08:14:26 +0000
+From: James R Miller <james@jrmiller.demon.co.uk>
+To:  dj4zc@amsat-dl.org
+Cc: guchten@gmail.com, avollhar@physik.uzh.ch, dl4yhf@freenet.de, hermann.hagn@ph.tum.de, dl1ydd@amsat.org, peter.guelzow@kourou.de, 
+ thilo.elsner@iuz-bochum.de
+Subject: EVE number crunching (revised)
+
+Dear All,
+
+
+                 Short Study of E-V-E Echos 2009 Mar 27
+                 --------------------------------------
+                         by James Miller G3RUH
+
+I have been able to spend a few hours quiet time looking at Wolfgang's
+recordings.
+
+The audio files are on the BOMEX machine in the control room, in Freddy's
+area:    cd /usr/home/fred/eve_090327/
+
+Each file is about 9 MB long, and may also be availabe from Wolfgang.
+
+-------------
+
+You will recall that the weather was better on Mar 27 [Thu] and so signals
+started out better, although it began to rain somewhat towards the end.
+
+I processed the 7 files for that morning.  The data is I and Q samples, 
+16-bit PCM, sample rate 8138 S/s, duration ~ 281s
+
+The WLAN clicks are terrible.  I tried various ways to avoid them; in the end
+a simple limiter - any signal larger than +/-3000 units was limited to
++/-3000 units.
+
+I tried 512, 1024, 2048 point FFTs with/without post-process filters to get
+the best SNR, and found that a basic 1024 point DFT with no window (flat)
+worked best.
+
+All records show a signal in the same frequency bin, 516.6 Hz.
+
+Here is a summary table of my findings:
+
+Initial results
+---------------
+Used 1024 point FFT.  Bin bandwidth = 7.95 Hz
+                                                   Y     Computed
+                              Floor     Freq     Echo      Echo
+                               RMS      Peak     Peak       SNR
+File                   FFTs    dB        Hz       dB      dB [Hz]
+-----------------------------------------------------------------
+EVE-090327_105946.wav  2224   0.092    516.6    +0.65 *    1.08 
+EVE-090327_110918.wav  2353   0.090    516.6    +0.65 *    1.08 
+EVE-090327_111908.wav  2226   0.092    516.6    +0.55      0.31 
+EVE-090327_112843.wav  2234   0.092    516.6    +0.65 *    1.08 
+EVE-090327_113818.wav  2184   0.093    516.6    +0.55      0.31 
+EVE-090327_114747.wav  2224   0.092    516.6    +0.50     -0.13 
+EVE-090327_115724.wav  2364   0.089    516.6    +0.20     -4.26 
+-----------------------------------------------------------------
+
+The weather commenced dry but overcast, and then it started to rain.  This can
+be seen in the deteriorating SNR.  The WLAN stuff was also variable.
+
+Taking the best 3 (*) of these yields a peak of 0.65 dB; that is, 12 sigma
+over a noisefloor of 0.053 dB; record duration 857s.  See graphic.
+
+A (S+N)/N of 0.65 dB --> S/N = 0.161.  This is in a bandwidth of B = 7.95 Hz.
+Multiplying by the bandwith normalises the result to a SNR of 1.28 in 1 Hz,
+or 1.08 dB:
+
+          +-------------------------------------------+
+          | Measured SNR of 1.1 dB in 1 Hz bandwidth. |
+          +-------------------------------------------+
+
+That same morning, when the weather was fine, we measured Cas-A and found the
+noise increase Y=2.7 dB yielding  A/T = 2.2 m^2/K (antenna effective are to
+system noise temperature).
+
+The previous day in the rain we found A/T = 1.8 m^2/K.   So let us
+conservatively take a value of A/T = 2 m^2/K  (alternatively G/T = 1678 K^-1)
+
+So, assume A=170m^2 (54% area efficiency) and T=85K , a power of 5 kW
+and Venus reflectivity of 10%, the expected SNR is 3.8 dB in 1 Hz.
+
+          +-------------------------------------------+
+          | Expected SNR of 3.8 dB in 1 Hz bandwidth. |
+          +-------------------------------------------+
+
+Though apparently down a couple of dB, the numbers do seem to be reaonable.
+
+73 de James G3RUH
+
+-- 
+==========================================================================
+    James R Miller      WWW/PGP:     http://www.jrmiller.demon.co.uk/
+  Cambridge, England   Stardate:        2009 Apr 03 [Fri] 0816 utc
+==========================================================================

@@ -1,0 +1,61 @@
+From: Moon-Net
+--------------
+Below is a more technical view of the EVE event in Bochum this week,
+taken from another reflector. More details could be found soon on the
+given AMSAT site.
+
+73 de Ulli, DL3YEL
+-------------------------------------------------------------------
+Original material:
+
+http://freenet-homepage.de/dl4yhf/speclab/earth_venus_earth.htm#success_on_2G4
+
+-------------------------------------------------------------------
+Hi James, Rik, Alberto and the group,
+
+Yes an impressive distance.. even though the ERP was a bit above the usual
+value for amateur radio on 13 cm. AMSAT-DL has applied for, and been granted,
+a special permission for this experiment which expires at the end of this
+year.
+
+The *principle* was simple:
+ - send a 5 minute carrier on 2.45x GHz, then
+ - receive for 5 minutes, remove impulse noise (WLAN), run the signal through
+   an FFT with ~11 Hz equivalent receiver bandwidth
+ - add all received power spectra to calculate an average (*)
+ - repeat the above until the sigma (standard deviation) in the frequency bins
+   gets low enough to see the weak reflection in one of those bins.
+ - while transmitting, keep the frequency constant to one or two Hz (not as
+   easy as it sounds)
+ - while receiving, permanently compensate the Doppler shift (which a
+   marvellous piece of software by G3RUH did)
+ - during the experiment, keep the dish pointed to Venus with an accuracy
+   better than 0.1? (which another piece of software by G3RUH did)
+ - hope that the 5-kW magnetron, and the cooling system (including a vaccum
+   cleaner and a water cooler from a VW Polo) holds..
+
+(*) A single FFT is not sufficient to lift the signal out of the noise. It
+was between 8 and 11 dB below the noise in a 10 Hz bandwidth; the ratio of
+<signal plus noise> to <noise> was between 0.3 and 0.4 dB; the latter
+measured today when it wasn't raining. This was sufficient to "see" the
+signal after 2 minutes, so we didn't have to average over consecutive 5-
+minute-receive intervals.
+
+Each dot of the "HI"-message lasted 5 minutes, because that's the approximate
+travelling time... in other words, "QRSS300" dictated by Venus ;-)
+
+Details, including the "Magnetron taming" circuit by DJ4ZC will appear in
+English language on www.amsat-dl.org hopefully soon. This vital part of the
+system includes 3 PLL circuits, a servo motor controller for the coarse
+frequency control (slow mechanical tuning, 6 MHz, on the output waveguide),
+and a fast controlling loop with about 1.5 MHz (iirc) loop bandwidth which
+involves 2 * 4CX1000 for the 'faster' frequency control, which also provides
+the SSB modulation. In fact, the energy not "used" for the SSB signal at a
+given instance is 'moved away' (spread out) by 15 kHz to both sides of the
+center frequency. Maybe some of these principles can be used in class-D
+amplifiers for other frequencies, which finally takes us back to LF / MF-
+related topics <g> .
+
+
+Cheers,
+ Wolf DL4YHF . 

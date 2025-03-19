@@ -1,0 +1,84 @@
+SB SAT @ AMSAT $ANS-095.01
+Recap of the Week of AMSAT-DL Earth-Venus-Earth Success
+
+AMSAT News Service Bulletin 095.01
+>From AMSAT HQ SILVER SPRING, MD.
+April 5, 2009
+To All RADIO AMATEURS
+BID: $ANS-095.01
+
+As the outstanding technical achievement attained when an inter-
+national team lead by AMSAT-DL completed the Earth-Venus-Earth path 
+on March 25 continues to reverberate throughout the Amateur Radio 
+world a recap of the event and links to additional details is in 
+order.
+
+The team consisted of many well known amateurs including Wolfgang 
+Büscher, DL4YHF; Freddy de Guchteneire, ON6UG; Hermann Hagner, DK8CI; 
+Michael Lengrüsser, DD5ER; Karl Meinzer, DJ4ZC; James Miller, G3RUH;
+Max Münich, DJ1CR; Hartmut Paesler, DL1YDD; and Achim Vollhardt,
+DH2VA.
+
+AMSAT-DL President Peter Guelzow, DB2OS provided a report of the
+accomplishment from the 20 meter dish located at the IUZ Sternwarte 
+Observatory in Bochum, Germany. The transmitter used a rubidium
+locked reference to generate about 6 kW CW on 2.4 GHz. The use of a 
+magnetron for this purpose was possible thanks to a new AMSAT-DL 
+developed modulator that enables a magnetron to be used for narrow 
+band operation.
+
+After traveling almost 100 million kilometers with a round trip delay 
+of about 5 minutes, the transmitted signal was clearly received as 
+echoes from the surface of Venus. FFT analysis software with an inte-
+gration time of 5 minutes was used. After integrating for only 2 min-
+utes the reflected signals were clearly visible in the display. 
+Despite the bad weather, signals from Venus could be detected from 
+1038 UTC on until the planet reached the local horizon.
+
+Receiving planetary echoes is a first in Germany and Europe. This 
+also marks the farthest distance attained by radio amateurs. The dis-
+tance via the Earth-Venus-Earth path is  over 100 times further 
+than the echoes from the moon via EME reflexions.
+
+The official Press Release: "First German Mars Mission makes sidestep 
+to Venus" can be downloaded as .PDF here:
+http://www.amsat-dl.org/pic/gallery2/main.php?g2_view=core.DownloadItem&g2_itemId=7561
+(careful with line wrap!)
+
+A news item in German with additional pictures and information can be
+viewed at:
+http://www.amsat-dl.org//index.php?option=com_content&task=view&id=166&Itemi
+d=97
+(careful with line wrap!)
+
+If you click on the small spectrum analyzer photograph embedded on this
+page you will be able to view a larger photo of the received signal. A
+photo of the AMSAT-DL Earth-Venus-Earth team is the second one. 
+
+Bob McGwier, N4HY observed the equipment and software used can be iden-
+tified, "In the photographs attached to this press release, one can see 
+the SDR-IQ (http://rfspace.com/Home.html) and Spectrum Lab
+(http://freenet-homepage.de/dl4yhf/spectra1.html)".
+
+A video showing Karl Meinzer DJ4ZC and Freddy de Guchteneire ON6UG with 
+the 2.4 GHz amplifier used for EVE which can be seen at: 
+http://tinyurl.com/EVE13cmAmp
+
+A video of the Amateur Radio Mars Orbiter P5-A presentation given at 
+the 2008 AMSAT-UK Colloquium by Achim Vollhardt DH2VA can be seen via 
+http://tinyurl.com/P5Apresentation
+
+GO-Mars with AMSAT-DL's P5A Mission 
+http://www.ticket-to-mars.org/
+
+Jess, W4MVB expressed the admiration of Amateur Radio operators around
+the world in his message, "Congratulations to you and your team for this 
+outstanding accomplishment! I simply can't believe how far we have come 
+since I first heard OSCAR 1 & 2 transmitting "HI" from space. I feel 
+privileged to be a witness to the kind of success our hobby has experi-
+enced  thanks to you and all  the dedicated amateurs around the world 
+who have brought us to this point."
+
+[ANS thanks AMSAT-DL; Trevor, M5AKA; Bob, N4HY for the above information]
+
+/EX

@@ -1,0 +1,73 @@
+
+EVE files
+---------
+Location on bomex:  cd /usr/home/fred/eve_090327
+
+-rw-r--r--  1 fred  fred    53478 Mar 27 12:13 150.jpg
+-rw-r--r--  1 fred  fred  9111596 Mar 27 11:04 EVE-090327_105946.wav
+-rw-r--r--  1 fred  fred  9637932 Mar 27 11:14 EVE-090327_110918.wav
+-rw-r--r--  1 fred  fred  9119788 Mar 27 11:23 EVE-090327_111908.wav
+-rw-r--r--  1 fred  fred  9150508 Mar 27 11:33 EVE-090327_112843.wav
+-rw-r--r--  1 fred  fred  8945708 Mar 27 11:42 EVE-090327_113818.wav
+-rw-r--r--  1 fred  fred  9109548 Mar 27 11:52 EVE-090327_114747.wav
+-rw-r--r--  1 fred  fred  9682988 Mar 27 12:02 EVE-090327_115724.wav
+
+Study of EVE-090327_105946.wav
+------------------------------
+File size 9111596 bytes  0x008B082C bytes
+
+0000 : 52 49 46 46           "RIFF"
+0004 : 2C 08 8B 00 9111596   number of bytes following (should be length-8)
+0008 : 57 41 56 45           "WAVE"
+000C : 66 6D 74 20           "fmt "
+0010 : 10 00 00 00           format - affects replay time
+0014 : 01 00 02 00           format (mono; ??) (unsigned linear/unsigned linear)
+0018 : CA 1F 00 00  8138     sample rate ch1
+001C : 28 7F 00 00  8138*4   sample rate ch2
+0020 : 04 00 10 00  16       bits/sample, mono/stereo(?)
+0024 : 64 61 74 61           "data"
+0028 : 00 08 8B 00 9111552   number of records following
+002C : 14 03 0C 01        
+0030 : 48 FA B1 FB        
+
+Format is I+Q  PCM  16 bits+16bits:
+       I_lsb, I_msb, Q_lsb, Q_msb
+       
+There is a lot of impulsive interference from WLAN(s).  This can be suppressed
+with a simple limiter on values exceeding +/-3000.  Could also chop out
+offending clicks.
+
+Note 1. Sample rate is 8138 S/s.
+     2. Time tages are UTC+1
+
+Initial results
+---------------
+Used 1024 point FFT.  Bin bandwidth = 7.95 Hz
+                                                         Computed
+                              Floor     Freq     Echo      Echo  
+                               RMS      Peak     Peak       CNR  
+File                   FFTs    dB        Hz       dB      dB [Hz]
+-----------------------------------------------------------------
+EVE-090327_105946.wav  2224   0.092    516.6    +0.65      3.60  
+EVE-090327_110918.wav  2353   0.090    516.6    +0.65      3.60  
+EVE-090327_111908.wav  2226   0.092    516.6    +0.55      3.17
+EVE-090327_112843.wav  2234   0.092    516.6    +0.65      3.60
+EVE-090327_113818.wav  2184   0.093    516.6    +0.55      3.17
+EVE-090327_114747.wav  2224   0.092    516.6    +0.50      2.94
+EVE-090327_115724.wav  2364   0.089    516.6    +0.20      1.38
+-----------------------------------------------------------------
+
+Taking the best 3 of these yields a peak of 0.65 dB above an RMS of 0.05 dB
+or 12 sigma, duration 857s.
+
+The weather commenced dry but overcast, and then it started to rain.  This can
+be seen in the deteriorating CNR.
+
+That same morning, when the weather was fine, we measured Cas-A and found the
+noise increase Y=2.7 dB yielding  A/T = 2.2 m^2/K .  The previous day in the
+rain we found A/T=1.8 m^2/K.   So let us conservatively assume a value of
+2 m^2/K.
+
+If then we assume A=170m^2 (54% area efficiency) and T=85K, a power of 5 kW
+and Venus reflectivity of 10%, the expected CNR is 3.80 dB in 1 Hz.
+

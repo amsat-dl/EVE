@@ -1,0 +1,13 @@
+EVE personnel L-R in photo 2009 Mar 25 [Wed]
+--------------------------------------------
+DK8CI   Hermann Hagn            Radiometry
+DJ4ZC   Karl Meinzer            Project leader and 2.45 GHz TX
+G3RUH   James Miller            Tracking software
+DH2VA   Achim Vollhardt         TX monitor software @ AOR500 RX system
+DJ1CR   Max Münich              Radiometry
+ON6UG   Freddy de Guchteneire   Microwave equipment; RX system
+DL4YHF  Wolfgang Büscher        Signal processing & detection           
+DD5ER   Michael Lengrüsser      Logistic support         
+DL1YDD  Hartmut Päsler          Telescope manager and logistics         
+
+http://www.amsat-dl.org/images/stories/satellites/p5a/tx/eve-team-bochum.jpg
