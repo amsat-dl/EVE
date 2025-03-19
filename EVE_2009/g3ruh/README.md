@@ -1,4 +1,4 @@
-his material is James Miller's contribution to an article in Amsat-DL journal
+This material is James Miller's contribution to an article in Amsat-DL journal
 concerning the recent Earth-Venus-Earth experiment.  Files are:
 
 README.TXT       This file
