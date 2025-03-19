@@ -14,12 +14,14 @@ EVE_2025  Folder containing prospects for 2025
      noise.txt      Estimates of RX noise power at 2.45 GHz of stars etc
      EquatorV.txt   Values of Venus apparent equatorial speed
      
-Prepared 2025 Mar 18 [Tue] 2110 utc by JRM/G3RUH pro AMSAT-DL
 
-
-There is also Wolfgang's fantatsic report:
+There is also Wolfgang's fantastic report:
    https://www.qsl.net/dl4yhf/speclab/earth_venus_earth.htm
 
 More at https://amsat-dl.org/en/earth-venus-earth-experiment-of-amsat-dl-successful/
+
+
+Prepared 2025 Mar 18 [Tue] 2110 utc by JRM/G3RUH pro AMSAT-DL
+
 
 
